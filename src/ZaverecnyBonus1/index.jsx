@@ -6,7 +6,13 @@ import React from 'react';
 export const ZaverecnyBonus1 = () => {
   return (
     <input
-      onChange={(e) => console.log(`Uživatel napsal: ${e.target.value}`)}
+      onChange={(e) => {
+        const result =
+          e.target.value === ''
+            ? 'Uživatel nenapsal nic.'
+            : `Uživatel napsal: ${e.target.value}`;
+        console.log(`Uživatel napsal: ${result}`);
+      }}
     />
   );
 };
